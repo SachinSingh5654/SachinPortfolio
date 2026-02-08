@@ -111,6 +111,17 @@ export const Footer = () => {
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </li>
+              <li>
+                <a
+                  href="https://www.geeksforgeeks.org/profile/sachinsinxlm3?tab=activity"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-2"
+                >
+                  GeeksforGeeks
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>

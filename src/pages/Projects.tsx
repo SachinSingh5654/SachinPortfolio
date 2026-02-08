@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Globe, Server, Database, Shield, Zap, Map } from "lucide-react";
+import { ExternalLink, Github, Globe, Server, Database, Shield, Zap, Map, Video, Stethoscope, Bot } from "lucide-react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -19,9 +19,38 @@ const projects = [
       "MapBox integration for location visualization",
     ],
     icon: Map,
+    image: "/reeshal.png",
     gradient: "from-primary to-secondary",
     github: "https://github.com/SachinSingh5654/FinalMajorProject/",
     live: "https://reeshal.onrender.com/listings",
+  },
+  {
+    title: "TaiyariGPT",
+    subtitle: "AI Assistant & Chatbot (Full Stack)",
+    description:
+      "A full-stack AI-powered chatbot application delivering intelligent, context-aware responses using Google Gemini API with a modern real-time chat interface.",
+    techStack: [
+      "MERN Stack",
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Google Gemini API",
+      "CSS",
+    ],
+    features: [
+      "Integrated Google Gemini API for intelligent and context-aware AI responses",
+      "Real-time conversational chat interface built with React and modern CSS UI/UX",
+      "Scalable backend developed using Node.js and Express.js",
+      "MongoDB database for efficient storage and retrieval of conversations",
+      "Full MERN architecture ensuring seamless frontend-backend integration",
+      "Production-ready deployment on Render with secure environment configuration",
+    ],
+    icon: Bot,
+    image: "/taiyarigpt.png",
+    gradient: "from-primary to-secondary",
+    github: "https://github.com/SachinSingh5654/TaiyariGPT",
+    live: "https://taiyarigpt.onrender.com/",
   },
   {
     title: "Whispr - Real-Time Chat Application",
@@ -36,9 +65,70 @@ const projects = [
       "99.9% uptime during stress testing",
     ],
     icon: Zap,
+    image: "/whispr.png",
     gradient: "from-secondary to-accent",
     github: "https://github.com/SachinSingh5654/ChatApp",
     live: "https://whisprchatapp.onrender.com/",
+  },
+  {
+    title: "ReeMan VideoCall",
+    subtitle: "Real-Time Video & Chatting Platform (Full Stack)",
+    description:
+      "A real-time video calling and chatting web application built using WebRTC and Socket.IO, featuring secure authentication, screen sharing, and responsive UI.",
+    techStack: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "WebRTC",
+      "Socket.IO",
+      "JWT",
+      "Bcrypt",
+      "Material-UI",
+      "Emotion CSS",
+    ],
+    features: [
+      "Real-time video calling using WebRTC",
+      "Integrated real-time chat with Socket.IO",
+      "Secure JWT-based authentication with Bcrypt password hashing",
+      "Screen sharing with audio & video controls",
+      "Responsive UI built with Material-UI and Emotion CSS",
+      "CORS-secured API communication",
+      "WebSocket-enabled deployment on Render",
+    ],
+    icon: Video,
+    image: "/reemanvideocall.png",
+    gradient: "from-primary to-secondary",
+    github: "https://github.com/SachinSingh5654/ReeManVideoCall",
+    live: "https://reemanvideocall-vnqf.onrender.com/",
+  },
+  {
+    title: "PulsePoint",
+    subtitle: "Smart Medical Appointment & Remedy System (Full Stack)",
+    description:
+      "A full-stack medical web platform that enables appointment booking, remedy recommendations, and doctor feedback with secure authentication and scalable backend.",
+    techStack: [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "EJS",
+      "MongoDB",
+      "Passport.js",
+      "Express-Session",
+    ],
+    features: [
+      "Secure authentication using Passport.js with session management",
+      "Role-based access for users and doctors",
+      "Appointment booking and management system",
+      "Categorized remedy library with advanced filtering",
+      "Doctor rating and patient feedback system",
+      "Structured MongoDB schemas for scalable data management",
+      "Deployed scalable application on Render",
+    ],
+    icon: Stethoscope,
+    image: "/pulsepoint.png",
+    gradient: "from-primary to-secondary",
+    github: "https://github.com/SachinSingh5654/Byteverse_-M.E.N.-Wizards-",
+    live: "https://pulsepoint-nh9x.onrender.com/",
   },
 ];
 
@@ -61,11 +151,10 @@ const Projects = () => {
                 direction={index % 2 === 0 ? "left" : "right"}
               >
                 <div
-                  className={`grid lg:grid-cols-2 gap-8 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
+                  className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    }`}
                 >
-                  {/* Project Visual */}
+                  {/* Project Visual with Image */}
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
                     <motion.div
                       whileHover={{ scale: 1.02 }}
@@ -76,24 +165,25 @@ const Projects = () => {
                         className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${project.gradient} opacity-20 blur-xl group-hover:opacity-30 transition-opacity`}
                       />
 
-                      <div className="relative glass-card rounded-2xl p-8 aspect-video flex items-center justify-center overflow-hidden">
+                      <div className="relative glass-card rounded-2xl p-2 aspect-video overflow-hidden">
                         {/* Grid pattern */}
-                        <div className="absolute inset-0 grid-pattern opacity-20" />
-
-                        {/* Icon */}
-                        <motion.div
-                          animate={{ y: [0, -10, 0] }}
-                          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                          className={`w-32 h-32 rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-                        >
-                          <project.icon className="w-16 h-16 text-background" />
-                        </motion.div>
+                        <div className="absolute inset-0 grid-pattern opacity-20 z-0" />
+                        
+                        {/* Project Image */}
+                        <div className="relative w-full h-full rounded-xl overflow-hidden">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover rounded-xl"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                        </div>
 
                         {/* Floating tech badges */}
                         <motion.div
                           animate={{ x: [0, 5, 0] }}
                           transition={{ duration: 3, repeat: Infinity }}
-                          className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-primary border border-primary/30"
+                          className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-primary border border-primary/30 z-10"
                         >
                           <Database className="w-3 h-3 inline mr-1" />
                           MongoDB
@@ -102,7 +192,7 @@ const Projects = () => {
                         <motion.div
                           animate={{ x: [0, -5, 0] }}
                           transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
-                          className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-secondary border border-secondary/30"
+                          className="absolute bottom-4 right-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-secondary border border-secondary/30 z-10"
                         >
                           <Server className="w-3 h-3 inline mr-1" />
                           Node.js
@@ -111,7 +201,7 @@ const Projects = () => {
                         <motion.div
                           animate={{ y: [0, 5, 0] }}
                           transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                          className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-accent border border-accent/30"
+                          className="absolute top-4 right-4 px-3 py-1.5 rounded-lg bg-background/80 backdrop-blur-sm text-xs font-mono text-accent border border-accent/30 z-10"
                         >
                           <Shield className="w-3 h-3 inline mr-1" />
                           JWT

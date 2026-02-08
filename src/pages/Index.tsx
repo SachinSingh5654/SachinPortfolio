@@ -85,8 +85,8 @@ const Index = () => {
 
               <AnimatedSection delay={0.3}>
                 <p className="text-muted-foreground text-lg mb-6 max-w-xl mx-auto lg:mx-0">
-                  3rd Year B.Tech CSE student at{" "}
-                  <span className="text-foreground font-medium">NIT Patna</span>,
+                  3rd Year <span className="text-foreground font-medium">B.Tech</span> in <span className="text-foreground font-medium">Computer Science and Engineering</span> student at National Institute of Technology, Patna{" "}
+                  <span className="text-foreground font-medium"> (NIT Patna) </span>,
                   passionate about building scalable web applications and solving
                   complex algorithmic problems.
                 </p>
@@ -110,14 +110,14 @@ const Index = () => {
                       <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </Link>
-                  <a href="../public/resume.pdf" download>
+                  <a href="../resume.pdf" download>
                     <Button
                       size="lg"
                       variant="outline"
                       className="border-primary/50 text-primary hover:bg-primary/10 px-8"
                     >
                       <Download className="mr-2 w-4 h-4" />
-                      Download CV
+                      Download Resume
                     </Button>
                   </a>
                 </div>
